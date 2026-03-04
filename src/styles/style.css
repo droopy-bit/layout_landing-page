@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -6,14 +8,19 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: "Manrope", sans-serif;
-  background: #111111;
-  color: #ffffff;
+  font-family: Manrope, sans-serif;
+  background: #111;
+  color: #fff;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+body:has(.mobile-menu.is-open) {
+  overflow: hidden;
 }
 
 img {
@@ -26,7 +33,9 @@ a {
   color: inherit;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -65,16 +74,17 @@ h1, h2, h3 {
 }
 
 .btn {
-  background: #ffffff;
-  color: #111111;
+  background: #fff;
+  color: #111;
   border: none;
   border-radius: 40px;
   padding: 14px 80px;
-  font-family: "Manrope", sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.05em;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 .btn:hover {
   background: #ddd;
@@ -106,7 +116,7 @@ h1, h2, h3 {
 .mobile-menu__logo {
   font-family: "Bebas Neue", sans-serif;
   font-size: 26px;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
 }
 .mobile-menu__close {
@@ -114,7 +124,7 @@ h1, h2, h3 {
   border: none;
   cursor: pointer;
   font-size: 32px;
-  color: #ffffff;
+  color: #fff;
   line-height: 1;
   padding: 0;
 }
@@ -127,7 +137,7 @@ h1, h2, h3 {
 .mobile-menu__nav a {
   font-family: "Bebas Neue", sans-serif;
   font-size: 38px;
-  color: #ffffff;
+  color: #fff;
   letter-spacing: 0.03em;
   text-decoration: none;
   transition: opacity 0.3s ease;
@@ -139,14 +149,14 @@ h1, h2, h3 {
   margin-top: auto;
   padding: 24px 32px;
 }
+.mobile-menu__footer a {
+  color: #fff;
+  text-decoration: none;
+}
 .mobile-menu__footer p {
   font-size: 13px;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 4px;
-}
-.mobile-menu__footer a {
-  color: #ffffff;
-  text-decoration: none;
 }
 .mobile-menu__footer p.link {
   text-decoration: underline;
@@ -160,16 +170,15 @@ h1, h2, h3 {
   width: 100%;
   z-index: 100;
   background: transparent;
-  border-bottom: none;
 }
 .header__inner {
   max-width: 1260px;
   margin: 0 auto;
-  padding: 0 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  padding: 0 60px;
 }
 @media (max-width: 1024px) {
   .header__inner {
@@ -190,7 +199,7 @@ h1, h2, h3 {
   font-family: "Bebas Neue", sans-serif;
   font-size: 38px;
   letter-spacing: 0.06em;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
@@ -209,7 +218,7 @@ h1, h2, h3 {
   transition: color 0.3s ease;
 }
 .header__phone:hover {
-  color: #ffffff;
+  color: #fff;
 }
 @media (max-width: 744px) {
   .header__phone {
@@ -221,17 +230,17 @@ h1, h2, h3 {
   gap: 14px;
 }
 .header__icon-btn {
-  color: #ffffff;
   display: flex;
   align-items: center;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: opacity 0.3s ease;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 .header__icon-btn:hover {
-  opacity: 0.7;
+  color: #c2c2c2;
 }
 .header__icon-btn svg {
   width: 22px;
@@ -254,17 +263,19 @@ h1, h2, h3 {
   inset: 0;
   overflow: hidden;
 }
+.hero a:hover .hero__bike {
+  transform: scale(1.04);
+}
 .hero__bike {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   transition: transform 0.3s ease;
-}
-.hero a:hover .hero__bike {
-  transform: scale(1.04);
 }
 .hero__content {
   position: relative;
@@ -280,7 +291,7 @@ h1, h2, h3 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   line-height: 1;
-  color: #ffffff;
+  color: #fff;
   white-space: nowrap;
   width: 100%;
   display: block;
@@ -289,7 +300,7 @@ h1, h2, h3 {
 }
 
 .move-free {
-  background: #111111;
+  background: #111;
   padding: 100px 0;
 }
 @media (max-width: 1024px) {
@@ -317,13 +328,13 @@ h1, h2, h3 {
 }
 .move-free__title {
   font-size: clamp(40px, 5vw, 76px);
-  color: #ffffff;
+  color: #fff;
   flex-shrink: 0;
 }
 .move-free__text {
   font-size: 16px;
   line-height: 1.7;
-  color: #ffffff;
+  color: #fff;
   max-width: 420px;
 }
 @media (max-width: 744px) {
@@ -361,6 +372,7 @@ h1, h2, h3 {
   }
 }
 .compare__img-wrap {
+  display: block;
   border-radius: 0;
   overflow: hidden;
   background: none;
@@ -370,8 +382,9 @@ h1, h2, h3 {
 .compare__img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  transition: transform 0.4s ease;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.3s ease;
 }
 .compare__img-wrap:hover img {
   transform: scale(1.07);
@@ -385,7 +398,7 @@ h1, h2, h3 {
 .compare__desc {
   font-size: 13px;
   line-height: 1.65;
-  color: #aaaaaa;
+  color: #aaa;
   margin-bottom: 12px;
 }
 .compare__price {
@@ -414,45 +427,46 @@ h1, h2, h3 {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-bottom: 20px;
-  overflow: hidden;
-  border-radius: 10px;
 }
 @media (max-width: 480px) {
   .details__photos {
     grid-template-columns: 1fr;
   }
 }
-.details__photos img {
+.details__photos a {
+  display: block;
+  overflow: hidden;
   border-radius: 10px;
+}
+.details__photos img {
   width: 100%;
   aspect-ratio: 3/2;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
 }
-.details__photos img:hover {
+.details__photos a:hover img {
   transform: scale(1.05);
 }
 .details__photos--col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  overflow: hidden;
-  border-radius: 10px;
 }
 .details__photos--col img {
   aspect-ratio: 3/2;
 }
 .details__info h3 {
-  font-family: "Manrope", sans-serif;
+  font-family: Manrope, sans-serif;
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: #fff;
 }
 .details__info p {
   font-size: 13px;
   line-height: 1.7;
-  color: #aaaaaa;
+  color: #aaa;
   max-width: 560px;
 }
 .details__cta {
@@ -497,45 +511,65 @@ h1, h2, h3 {
   flex-direction: column;
   gap: 12px;
 }
-.contact__form input, .contact__form textarea {
+.contact__form input {
   width: 100%;
   background: rgba(255, 255, 255, 0.08);
   border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 40px;
-  color: #ffffff;
-  font-family: "Manrope", sans-serif;
+  color: #fff;
+  font-family: Manrope, sans-serif;
   font-size: 14px;
   padding: 14px 20px;
   outline: none;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
 }
-.contact__form input::placeholder, .contact__form textarea::placeholder {
-  color: #ffffff;
+.contact__form input::-moz-placeholder {
+  color: #fff;
 }
-.contact__form input:focus, .contact__form textarea:focus {
+.contact__form input::placeholder {
+  color: #fff;
+}
+.contact__form input:focus {
   border-color: rgba(255, 255, 255, 0.5);
 }
 .contact__form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  color: #fff;
+  font-family: Manrope, sans-serif;
+  font-size: 14px;
+  padding: 14px 20px;
+  outline: none;
   resize: none;
   height: 130px;
-  border-radius: 20px;
+  transition: border-color 0.3s ease;
+}
+.contact__form textarea::-moz-placeholder {
+  color: #fff;
+}
+.contact__form textarea::placeholder {
+  color: #fff;
+}
+.contact__form textarea:focus {
+  border-color: rgba(255, 255, 255, 0.5);
 }
 .contact__form .btn {
   width: 100%;
-  background: #ffffff;
-  color: #111111;
+  background: #fff;
+  color: #111;
   border: none;
   border-radius: 40px;
   padding: 16px 40px;
-  font-family: "Manrope", sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 .contact__form .btn:hover {
   background: #ddd;
-  box-shadow: 0 0 24px rgba(255, 255, 255, 0.12);
 }
 .contact__info {
   display: flex;
@@ -554,12 +588,12 @@ h1, h2, h3 {
 .contact__info p {
   font-size: 20px;
   line-height: 1.5;
-  color: #ffffff;
+  color: #fff;
 }
 .contact__info a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 .contact__info a:hover {
   color: #aaa;
@@ -575,8 +609,10 @@ h1, h2, h3 {
 .contact__photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
   transform: scale(1);
   opacity: 0;
   transition: transform 0.08s linear, opacity 0.3s ease;
@@ -586,6 +622,4 @@ h1, h2, h3 {
   .contact__photo {
     height: 240px;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

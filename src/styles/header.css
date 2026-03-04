@@ -3,50 +3,67 @@
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: #ececec;
-  padding: 36px 48px;
+  background: #1a1a1a;
   flex-direction: column;
+  overflow: auto;
+}
+.mobile-menu.is-open {
+  display: flex;
 }
 .mobile-menu__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 56px;
+  padding: 24px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .mobile-menu__logo {
   font-family: "Bebas Neue", sans-serif;
   font-size: 26px;
-  color: #111;
+  color: #fff;
+  text-decoration: none;
 }
 .mobile-menu__close {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 32px;
-  color: #111;
+  color: #fff;
   line-height: 1;
+  padding: 0;
 }
 .mobile-menu__nav {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 40px 32px;
 }
 .mobile-menu__nav a {
   font-family: "Bebas Neue", sans-serif;
   font-size: 38px;
-  color: #111;
+  color: #fff;
   letter-spacing: 0.03em;
   text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 .mobile-menu__nav a:hover {
   opacity: 0.6;
 }
 .mobile-menu__footer {
   margin-top: auto;
+  padding: 24px 32px;
+}
+.mobile-menu__footer a {
+  color: #fff;
+  text-decoration: none;
 }
 .mobile-menu__footer p {
   font-size: 13px;
-  color: #111;
+  color: #fff;
   margin-bottom: 4px;
 }
 .mobile-menu__footer p.link {
@@ -61,38 +78,41 @@
   width: 100%;
   z-index: 100;
   background: transparent;
-  border-bottom: none;
 }
 .header__inner {
   max-width: 1260px;
   margin: 0 auto;
-  padding: 0 120px 0 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  padding: 0 60px;
 }
 @media (max-width: 1024px) {
   .header__inner {
-    padding: 0 40px 0 40px;
+    padding: 0 40px;
   }
 }
 @media (max-width: 744px) {
   .header__inner {
-    padding: 0 32px 0 32px;
+    padding: 0 32px;
   }
 }
 @media (max-width: 480px) {
   .header__inner {
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
   }
 }
 .header__logo {
   font-family: "Bebas Neue", sans-serif;
   font-size: 38px;
   letter-spacing: 0.06em;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+.header__logo:hover {
+  opacity: 0.7;
 }
 .header__right {
   display: flex;
@@ -103,6 +123,10 @@
   font-size: 13px;
   color: #ccc;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+.header__phone:hover {
+  color: #fff;
 }
 @media (max-width: 744px) {
   .header__phone {
@@ -114,13 +138,17 @@
   gap: 14px;
 }
 .header__icon-btn {
-  color: #ffffff;
   display: flex;
   align-items: center;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.header__icon-btn:hover {
+  color: #c2c2c2;
 }
 .header__icon-btn svg {
   width: 22px;
