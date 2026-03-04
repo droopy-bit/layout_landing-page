@@ -1,0 +1,50 @@
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+
+.compare__img-wrap,
+.details__photos a {
+  display: block;
+  overflow: hidden;
+
+  img {
+    transition: transform 0.3s ease;
+    display: block;
+    width: 100%;
+  }
+
+  &:hover img {
+    transform: scale(1.07);
+  }
+}
+
+
+.hero a {
+  display: block;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+
+  img.hero__bike {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img.hero__bike {
+    transform: scale(1.04);
+  }
+}
+
+// Mobile menu open state
+.mobile-menu {
+  display: none;
+
+  &.is-open {
+    display: flex;
+  }
+}

@@ -1,0 +1,124 @@
+@import 'variables';
+
+// 9. Единая скорость анимации по всей странице
+$transition: all 0.3s ease;
+
+.contact {
+  padding: 100px 0 0;
+
+  @media (max-width: $tablet) { padding-top: 72px; }
+  @media (max-width: $mobile) { padding-top: 52px; }
+
+  .container { padding-bottom: 80px; }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 250px;
+
+    @media (max-width: $ipad)   { grid-template-columns: 1fr; gap: 44px; }
+    @media (max-width: $mobile) { gap: 32px; }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    input, textarea {
+      width: 100%;
+      background: rgba(255,255,255,.08);
+      border: 1.5px solid rgba(255,255,255,.15);
+      border-radius: 40px;
+      color: $white;
+      font-family: $font-body;
+      font-size: 14px;
+      padding: 14px 20px;
+      outline: none;
+      transition: $transition;
+
+      // 14. Белые placeholder с примерами
+      &::placeholder { color: $white; }
+      &:focus { border-color: rgba(255,255,255,.5); }
+    }
+
+    textarea {
+      resize: none;
+      height: 130px;
+      border-radius: 20px;
+    }
+
+    .btn {
+      width: 100%;
+      background: $white;
+      color: $bg;
+      border: none;
+      border-radius: 40px;
+      padding: 16px 40px;
+      font-family: $font-body;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background: #ddd;
+        box-shadow: 0 0 24px rgba(255,255,255,.12);
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    justify-content: center;
+
+    label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+      color: $white;
+    }
+
+    // 4. Hover на телефон, email, адрес
+    a {
+      color: $white;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover { color: #aaa; }
+    }
+  }
+
+  // 16. Sticky снизу + z-index: -1 (фоновый эффект)
+  &__photo {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: sticky;
+    bottom: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transform: scale(1);
+      opacity: 0;
+      transition: transform 0.08s linear, opacity 0.3s ease;
+      will-change: transform, opacity;
+    }
+
+    @media (max-width: $mobile) { height: 240px; }
+  }
+}

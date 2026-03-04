@@ -1,1 +1,58 @@
-'use strict';
+
+const menuOpen   = document.getElementById('menuOpen');
+const menuClose  = document.getElementById('menuClose');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (menuOpen)  menuOpen.addEventListener('click',  () => mobileMenu.classList.add('is-open'));
+if (menuClose) menuClose.addEventListener('click', () => mobileMenu.classList.remove('is-open'));
+
+document.querySelectorAll('.mobile-menu__nav a').forEach(link => {
+  link.addEventListener('click', () => mobileMenu.classList.remove('is-open'));
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const id = link.getAttribute('href');
+    if (id === '#') return;
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+
+const heroTitle = document.querySelector('.hero__title');
+
+function fitTitle() {
+  if (!heroTitle) return;
+  heroTitle.style.fontSize = '100px';
+  const titleWidth  = heroTitle.getBoundingClientRect().width;
+  const windowWidth = window.innerWidth;
+  const newSize     = 100 * (windowWidth / titleWidth) * 0.85; 
+  heroTitle.style.fontSize = newSize + 'px';
+}
+
+window.addEventListener('load', () => {
+  document.fonts.ready.then(() => fitTitle());
+});
+window.addEventListener('resize', fitTitle);
+
+
+const photoWrap = document.querySelector('.contact__photo');
+const photoImg  = photoWrap ? photoWrap.querySelector('img') : null;
+
+if (photoImg) {
+  const update = () => {
+    const rect     = photoWrap.getBoundingClientRect();
+    const wh       = window.innerHeight;
+    const progress = Math.min(Math.max((wh - rect.top) / (wh + rect.height), 0), 1);
+    photoImg.style.transform = `scale(${1 + progress * 0.35})`;
+    photoImg.style.opacity   = Math.min(progress * 2, 1);
+  };
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}

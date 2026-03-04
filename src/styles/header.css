@@ -1,0 +1,131 @@
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #ececec;
+  padding: 36px 48px;
+  flex-direction: column;
+}
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 56px;
+}
+.mobile-menu__logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 26px;
+  color: #111;
+}
+.mobile-menu__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 32px;
+  color: #111;
+  line-height: 1;
+}
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-menu__nav a {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 38px;
+  color: #111;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+.mobile-menu__nav a:hover {
+  opacity: 0.6;
+}
+.mobile-menu__footer {
+  margin-top: auto;
+}
+.mobile-menu__footer p {
+  font-size: 13px;
+  color: #111;
+  margin-bottom: 4px;
+}
+.mobile-menu__footer p.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  border-bottom: none;
+}
+.header__inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 120px 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+@media (max-width: 1024px) {
+  .header__inner {
+    padding: 0 40px 0 40px;
+  }
+}
+@media (max-width: 744px) {
+  .header__inner {
+    padding: 0 32px 0 32px;
+  }
+}
+@media (max-width: 480px) {
+  .header__inner {
+    padding: 0 20px 0 20px;
+  }
+}
+.header__logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 38px;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  text-decoration: none;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header__phone {
+  font-size: 13px;
+  color: #ccc;
+  text-decoration: none;
+}
+@media (max-width: 744px) {
+  .header__phone {
+    display: none;
+  }
+}
+.header__icons {
+  display: flex;
+  gap: 14px;
+}
+.header__icon-btn {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.header__icon-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}/*# sourceMappingURL=header.css.map */
