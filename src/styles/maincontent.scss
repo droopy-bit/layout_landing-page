@@ -152,11 +152,10 @@
     }
   }
 
+  /* stylelint-disable no-descending-specificity */
   &__photos--col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    /* stylelint-disable-next-line no-descending-specificity */
 
     img {
       aspect-ratio: 3 / 2;
