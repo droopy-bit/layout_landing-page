@@ -66,13 +66,13 @@
     margin-top: auto;
     padding: 24px 32px;
 
+    a:hover {
+      opacity: 1;
+    }
+
     a {
       color: $white;
       text-decoration: none;
-
-      &:hover {
-        opacity: 1;
-      }
     }
 
     p {
