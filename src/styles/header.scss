@@ -48,7 +48,6 @@
     gap: 4px;
     padding: 40px 32px;
 
-    // base link styles must come before hover
     a {
       font-family: $font-title;
       font-size: 38px;
@@ -56,10 +55,10 @@
       letter-spacing: 0.03em;
       text-decoration: none;
       transition: opacity 0.3s ease;
-    }
 
-    a:hover {
-      opacity: 0.6;
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 
@@ -67,10 +66,13 @@
     margin-top: auto;
     padding: 24px 32px;
 
-    // base link comes before nav a:hover — placed in separate block
     a {
       color: $white;
       text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+      }
     }
 
     p {
