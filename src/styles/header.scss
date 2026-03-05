@@ -1,32 +1,48 @@
 @import 'variables';
 
 .mobile-menu {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   z-index: 200;
   background: #c8c8c4;
   flex-direction: column;
   overflow: hidden;
-
-  // Slide in from left
+  pointer-events: none;
+  opacity: 0;
   transform: translateX(-100%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
 
   &.is-open {
-    display: flex;
+    pointer-events: all;
+    opacity: 1;
     transform: translateX(0);
   }
 
   &__top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 32px;
     position: sticky;
     top: 0;
     z-index: 1;
     background: #c8c8c4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    padding: 0 60px;
+
+    @media (max-width: $tablet) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: $ipad) {
+      padding: 0 32px;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 0 20px;
+    }
   }
 
   &__logo {
@@ -37,8 +53,6 @@
       height: 28px;
       width: auto;
       display: block;
-
-      // Invert to make white logo dark for gray menu bg
       filter: invert(1);
     }
   }
@@ -115,24 +129,6 @@
       cursor: pointer;
       margin-bottom: 0;
     }
-  }
-}
-
-// Animate open: use animation instead of display:none trick
-.mobile-menu {
-  display: flex;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateX(-100%);
-  transition:
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.4s ease;
-
-  &.is-open {
-    display: flex;
-    pointer-events: all;
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -226,8 +222,6 @@
       stroke-width: 1.8;
     }
 
-
-    // ── Phone icon hover ─────────────────────────────────────────
     &.header__phone-btn {
       .header__icon-img {
         width: 28px;
@@ -281,8 +275,6 @@
       }
     }
 
-
-    // ── Burger icon hover — swap to hover PNG ────────────────────
     &.header__burger-btn {
       width: 28px;
       height: 28px;
