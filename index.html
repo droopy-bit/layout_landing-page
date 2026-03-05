@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyBiKE — Take the Streets</title>
-    <link rel="icon" href="src/img/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"
+    crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="src/styles/style.css" />
   </head>
   <body>
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-menu__top">
-        <a href="#" class="mobile-menu__logo">MyBiKE</a>
+        <a href="#" class="mobile-menu__logo"><img src="src/img/MyBiKE.png" alt="MyBiKE" /></a>
         <button class="mobile-menu__close" id="menuClose">&#215;</button>
       </div>
       <nav class="mobile-menu__nav">
@@ -31,22 +31,29 @@
 
     <header class="header">
       <div class="header__inner">
-        <a href="#" class="header__logo">MyBiKE</a>
+        <a href="#" class="header__logo"><img src="src/img/MyBiKE.png" alt="MyBiKE" /></a>
         <div class="header__right">
           <a href="tel:+12345555555" class="header__phone">+1 234 555&#8211;55&#8211;55</a>
           <div class="header__icons">
-            <a href="tel:+12345555555" class="header__icon-btn header__phone-btn" aria-label="Call">
-              <svg viewBox="0 0 24 24">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-5-5 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L9.91 10.09a16 16 0 0 0 4 4l.46-.46a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
+            <a href="tel:+12345555555" class="header__icon-btn header__phone-btn"
+            aria-label="Call">
+              <img src="src/img/Icon-Phone-call.png" alt="Call"
+              class="header__icon-img" />
               <span class="header__phone-tooltip">+1 234 555&#8211;55&#8211;55</span>
             </a>
-            <button class="header__icon-btn" id="menuOpen" aria-label="Menu">
+            <button class="header__icon-btn header__burger-btn" id="menuOpen"
+            aria-label="Menu">
               <svg viewBox="0 0 24 24">
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <line x1="3" y1="12" x2="21" y2="12"/>
-                <line x1="3" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6"
+                x2="21" y2="6"/>
+                <line x1="3" y1="12"
+                x2="21" y2="12"/>
+                <line x1="3" y1="18"
+                x2="21" y2="18"/>
               </svg>
+              <img src="src/img/Icon-Burger-menu-hover.png"
+              alt="aaa"
+              class="header__burger-hover" />
             </button>
           </div>
         </div>
@@ -55,7 +62,8 @@
 
     <section class="hero">
       <a href="#">
-        <img class="hero__bike" src="src/img/bike_black.jpg" alt="MyBike" />
+        <img class="hero__bike" src="src/img/bike_black.jpg"
+        alt="MyBike" />
       </a>
       <div class="hero__content">
         <h1 class="hero__title">Take the Streets</h1>
@@ -148,9 +156,12 @@
         <h2 class="section-title">Contact us</h2>
         <div class="contact__grid">
           <form class="contact__form" onsubmit="this.reset(); return false;">
-            <input type="text" name="name" placeholder="Your name, e.g. John Smith" required />
-            <input type="email" name="email" placeholder="Your email, e.g. john@mail.com" required />
-            <textarea name="message" placeholder="Your message..." required></textarea>
+            <input type="text" name="name"
+            placeholder="Your name, e.g. John Smith" required />
+            <input type="email" name="email"
+            placeholder="Your email, e.g. john@mail.com" required />
+            <textarea name="message" placeholder="Your message..."
+            required></textarea>
             <button class="btn" type="submit">Send</button>
           </form>
           <div class="contact__info">
@@ -165,7 +176,8 @@
             <div>
               <label>Address</label>
               <p>
-                <a href="https://www.google.com/maps/search/400+First+Ave+Suite+700+Minneapolis+MN+55401" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.google.com/maps/search/400+First+Ave+Suite+700+Minneapolis+MN+55401" target="_blank"
+                rel="noopener noreferrer">
                   400 first ave, suite 700, Minneapolis, MN 55401
                 </a>
               </p>

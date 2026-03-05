@@ -3,12 +3,15 @@
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: #1a1a1a;
+  background: #c8c8c4;
   flex-direction: column;
   overflow: auto;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-menu.is-open {
   display: flex;
+  transform: translateX(0);
 }
 .mobile-menu__top {
   display: flex;
@@ -18,64 +21,97 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  background: #1a1a1a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #c8c8c4;
 }
 .mobile-menu__logo {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 26px;
-  color: #fff;
   text-decoration: none;
+  display: block;
+}
+.mobile-menu__logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+  /* Invert to make white logo dark for gray menu bg */
+  filter: invert(1);
 }
 .mobile-menu__close {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 32px;
-  color: #fff;
+  font-size: 28px;
+  color: #111;
   line-height: 1;
   padding: 0;
+  transition: opacity 0.2s ease;
+}
+.mobile-menu__close:hover {
+  opacity: 0.5;
 }
 .mobile-menu__nav {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 40px 32px;
+  gap: 0;
+  padding: 32px;
   /* stylelint-disable-next-line no-descending-specificity */
 }
 .mobile-menu__nav a {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 38px;
-  color: #fff;
-  letter-spacing: 0.03em;
+  font-size: 48px;
+  color: #111;
+  letter-spacing: 0.06em;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  line-height: 1.15;
+  position: relative;
+  display: inline-block;
+  transition: opacity 0.2s ease;
 }
 .mobile-menu__nav a:hover {
-  opacity: 0.6;
+  opacity: 0.7;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 .mobile-menu__footer {
   margin-top: auto;
-  padding: 24px 32px;
-}
-.mobile-menu__footer a:hover {
-  opacity: 1;
-}
-.mobile-menu__footer {
+  padding: 32px 40px;
   /* stylelint-disable-next-line no-descending-specificity */
 }
 .mobile-menu__footer a {
-  color: #fff;
+  color: #111;
   text-decoration: none;
 }
 .mobile-menu__footer p {
-  font-size: 13px;
-  color: #fff;
-  margin-bottom: 4px;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  color: #111;
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 .mobile-menu__footer p.link {
+  font-family: Poppins, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   text-decoration: underline;
+  text-underline-offset: 3px;
   cursor: pointer;
+  margin-bottom: 0;
+}
+
+.mobile-menu {
+  display: flex;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+.mobile-menu.is-open {
+  display: flex;
+  pointer-events: all;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .header {
@@ -144,6 +180,7 @@
 .header__icons {
   display: flex;
   gap: 14px;
+  align-items: center;
 }
 .header__icon-btn {
   display: flex;
@@ -156,22 +193,30 @@
   transition: color 0.3s ease;
   position: relative;
 }
-.header__icon-btn:hover {
-  color: #c2c2c2;
-}
 .header__icon-btn svg {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
+}
+.header__icon-btn.header__phone-btn .header__icon-img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.header__icon-btn.header__phone-btn:hover .header__icon-img {
+  transform: rotate(-15deg) scale(1.15);
+  opacity: 0.75;
 }
 .header__icon-btn.header__phone-btn .header__phone-tooltip {
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
-  background: rgba(30, 30, 30, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   padding: 8px 14px;
   white-space: nowrap;
@@ -180,22 +225,47 @@
   color: #fff;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .header__icon-btn.header__phone-btn .header__phone-tooltip::before {
   content: "";
   position: absolute;
   top: -5px;
-  right: 12px;
+  right: 10px;
   width: 8px;
   height: 8px;
-  background: rgba(30, 30, 30, 0.95);
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   transform: rotate(45deg);
 }
 .header__icon-btn.header__phone-btn:hover .header__phone-tooltip {
   opacity: 1;
   transform: translateY(0);
+}
+.header__icon-btn.header__burger-btn {
+  width: 28px;
+  height: 28px;
+  justify-content: center;
+  position: relative;
+}
+.header__icon-btn.header__burger-btn svg {
+  width: 28px;
+  height: 28px;
+  transition: opacity 0.25s ease;
+}
+.header__icon-btn.header__burger-btn .header__burger-hover {
+  position: absolute;
+  inset: 0;
+  width: 28px;
+  height: 28px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.header__icon-btn.header__burger-btn:hover svg {
+  opacity: 0;
+}
+.header__icon-btn.header__burger-btn:hover .header__burger-hover {
+  opacity: 1;
 }/*# sourceMappingURL=header.css.map */

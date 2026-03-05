@@ -2,8 +2,17 @@ const menuOpen   = document.getElementById('menuOpen');
 const menuClose  = document.getElementById('menuClose');
 const mobileMenu = document.getElementById('mobileMenu');
 
-if (menuOpen)  menuOpen.addEventListener('click',  () => mobileMenu.classList.add('is-open'));
-if (menuClose) menuClose.addEventListener('click', () => mobileMenu.classList.remove('is-open'));
+if (menuOpen) {
+  menuOpen.addEventListener('click', () => {
+    mobileMenu.classList.add('is-open');
+  });
+}
+
+if (menuClose) {
+  menuClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('is-open');
+  });
+}
 
 document.querySelectorAll('.mobile-menu__nav a').forEach(link => {
   link.addEventListener('click', () => mobileMenu.classList.remove('is-open'));
@@ -47,6 +56,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener('resize', fitTitle);
 
+// ── Contact photo parallax ───────────────────────────────────────
 const photoWrap = document.querySelector('.contact__photo');
 const photoImg  = photoWrap ? photoWrap.querySelector('img') : null;
 

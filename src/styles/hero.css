@@ -10,6 +10,7 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  z-index: 2;
 }
 .hero a:hover .hero__bike {
   transform: scale(1.04);
