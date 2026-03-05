@@ -7,7 +7,7 @@
   z-index: 200;
   background: #c8c8c4;
   flex-direction: column;
-  overflow: auto;
+  overflow: hidden;
 
   // Slide in from left
   transform: translateX(-100%);
@@ -37,8 +37,8 @@
       height: 28px;
       width: auto;
       display: block;
-      
-      /* Invert to make white logo dark for gray menu bg */
+
+      // Invert to make white logo dark for gray menu bg
       filter: invert(1);
     }
   }

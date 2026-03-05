@@ -2,20 +2,26 @@ const menuOpen   = document.getElementById('menuOpen');
 const menuClose  = document.getElementById('menuClose');
 const mobileMenu = document.getElementById('mobileMenu');
 
+function openMenu() {
+  mobileMenu.classList.add('is-open');
+  document.body.classList.add('no-scroll');
+}
+
+function closeMenu() {
+  mobileMenu.classList.remove('is-open');
+  document.body.classList.remove('no-scroll');
+}
+
 if (menuOpen) {
-  menuOpen.addEventListener('click', () => {
-    mobileMenu.classList.add('is-open');
-  });
+  menuOpen.addEventListener('click', openMenu);
 }
 
 if (menuClose) {
-  menuClose.addEventListener('click', () => {
-    mobileMenu.classList.remove('is-open');
-  });
+  menuClose.addEventListener('click', closeMenu);
 }
 
 document.querySelectorAll('.mobile-menu__nav a').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('is-open'));
+  link.addEventListener('click', closeMenu);
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
