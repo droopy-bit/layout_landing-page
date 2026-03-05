@@ -24,8 +24,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  padding: 0 60px;
+  height: 52px;
+  padding: 0 calc((100% - 1260px) / 2 + 60px);
+}
+@media (max-width: 1260px) {
+  .mobile-menu__top {
+    padding: 0 60px 0 calc((100% - 1260px) / 2 + 60px);
+  }
 }
 @media (max-width: 1024px) {
   .mobile-menu__top {
@@ -34,7 +39,7 @@
 }
 @media (max-width: 744px) {
   .mobile-menu__top {
-    padding: 0 32px;
+    padding: 0 60px 0 calc((100% - 1260px) / 2 + 60px);
   }
 }
 @media (max-width: 480px) {
@@ -69,7 +74,29 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding: 32px;
+  padding: 0 60px 0 calc((100% - 1260px) / 2 + 60px);
+}
+@media (max-width: 1260px) {
+  .mobile-menu__nav {
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .mobile-menu__nav {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 744px) {
+  .mobile-menu__nav {
+    padding: 0 32px;
+  }
+}
+@media (max-width: 480px) {
+  .mobile-menu__nav {
+    padding: 0 20px;
+  }
+}
+.mobile-menu__nav {
   /* stylelint-disable-next-line no-descending-specificity */
 }
 .mobile-menu__nav a {
@@ -90,8 +117,29 @@
   text-decoration-thickness: 2px;
 }
 .mobile-menu__footer {
-  margin-top: auto;
-  padding: 32px 40px;
+  padding: 24px 60px 24px calc((100% - 1260px) / 2 + 60px);
+}
+@media (max-width: 1260px) {
+  .mobile-menu__footer {
+    padding: 24px 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .mobile-menu__footer {
+    padding: 24px 40px;
+  }
+}
+@media (max-width: 744px) {
+  .mobile-menu__footer {
+    padding: 24px 32px;
+  }
+}
+@media (max-width: 480px) {
+  .mobile-menu__footer {
+    padding: 24px 20px;
+  }
+}
+.mobile-menu__footer {
   /* stylelint-disable-next-line no-descending-specificity */
 }
 .mobile-menu__footer a {
@@ -132,8 +180,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  padding: 0 60px;
+  height: 52px;
+  padding: 0 60px 0 calc((100% - 1260px) / 2 + 60px);
 }
 @media (max-width: 1024px) {
   .header__inner {
@@ -142,7 +190,7 @@
 }
 @media (max-width: 744px) {
   .header__inner {
-    padding: 0 32px;
+    padding: 0 60px 0 calc((100% - 1260px) / 2 + 60px);
   }
 }
 @media (max-width: 480px) {

@@ -40,7 +40,7 @@
   background: #fff;
   border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 40px;
-  color: #111;
+  color: #1d1d1d;
   font-family: Manrope, sans-serif;
   font-size: 14px;
   padding: 14px 20px;
@@ -49,8 +49,8 @@
 }
 .contact__form input:-webkit-autofill, .contact__form input:-webkit-autofill:hover, .contact__form input:-webkit-autofill:focus, .contact__form input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
-  -webkit-text-fill-color: #111 !important;
-  caret-color: #111;
+  -webkit-text-fill-color: #1d1d1d !important;
+  caret-color: #1d1d1d;
   -webkit-transition: background-color 9999s ease-in-out 0s;
   transition: background-color 9999s ease-in-out 0s;
 }
@@ -68,7 +68,7 @@
   background: #fff;
   border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  color: #111;
+  color: #1d1d1d;
   font-family: Manrope, sans-serif;
   font-size: 14px;
   padding: 14px 20px;
@@ -89,7 +89,7 @@
 .contact__form .btn {
   width: 100%;
   background: #fff;
-  color: #111;
+  color: #1d1d1d;
   border: none;
   border-radius: 40px;
   padding: 16px 40px;

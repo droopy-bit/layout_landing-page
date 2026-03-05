@@ -1,5 +1,5 @@
 .move-free {
-  background: #111;
+  background: #1d1d1d;
   padding: 100px 0;
 }
 @media (max-width: 744px) {
@@ -159,6 +159,15 @@
   .details__photos a img {
     height: 180px;
   }
+}
+.details__photos a:first-child img {
+  -o-object-position: center 10%;
+     object-position: center 10%;
+  transform: scale(1.15);
+  transform-origin: center top;
+}
+.details__photos a:first-child:hover img {
+  transform: scale(1.22);
 }
 .details__photos a:hover img {
   transform: scale(1.05);
