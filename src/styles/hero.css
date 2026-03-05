@@ -14,6 +14,9 @@
 .hero a:hover .hero__bike {
   transform: scale(1.04);
 }
+.hero {
+  /* stylelint-disable-next-line no-descending-specificity */
+}
 .hero__bike {
   position: absolute;
   inset: 0;
@@ -21,9 +24,15 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: center center;
+     object-position: center center;
   transition: transform 0.3s ease;
+}
+@media (max-width: 480px) {
+  .hero__bike {
+    -o-object-position: 80% 30%;
+       object-position: 80% 30%;
+  }
 }
 .hero__content {
   position: relative;

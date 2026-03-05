@@ -38,11 +38,9 @@ function fitTitle() {
   heroTitle.style.fontSize = newSize + 'px';
 }
 
-
 window.addEventListener('load', () => {
   document.fonts.ready.then(() => {
     fitTitle();
-
     setTimeout(fitTitle, 300);
   });
 });
