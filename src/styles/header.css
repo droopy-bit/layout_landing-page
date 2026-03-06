@@ -61,7 +61,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 28px;
+  font-size: 36px;
   color: #111;
   line-height: 1;
   padding: 0;
@@ -180,8 +180,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 52px;
-  padding: 0 60px 0 calc((100% - 1260px) / 2 + 60px);
+  height: 72px;
+  padding: 0 60px;
 }
 @media (max-width: 1024px) {
   .header__inner {
@@ -190,7 +190,7 @@
 }
 @media (max-width: 744px) {
   .header__inner {
-    padding: 0 60px 0 calc((100% - 1260px) / 2 + 60px);
+    padding: 0 32px;
   }
 }
 @media (max-width: 480px) {

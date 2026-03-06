@@ -151,6 +151,7 @@
         height: 321px;
         object-fit: cover;
         object-position: center center;
+        transition: transform 0.3s ease;
 
         @media (max-width: $ipad) {
           height: 240px;
@@ -189,6 +190,7 @@
       transform: none;
       transform-origin: unset;
       object-position: center center;
+      transition: transform 0.3s ease;
     }
 
     a:last-child img {
@@ -222,6 +224,7 @@
     a img {
       transform: none;
       object-position: center center;
+      transition: transform 0.3s ease;
     }
 
     a:hover img {

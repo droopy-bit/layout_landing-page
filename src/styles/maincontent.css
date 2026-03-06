@@ -149,6 +149,7 @@
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
+  transition: transform 0.3s ease;
 }
 @media (max-width: 744px) {
   .details__photos a img {
@@ -188,6 +189,7 @@
   transform-origin: unset;
   -o-object-position: center center;
      object-position: center center;
+  transition: transform 0.3s ease;
 }
 .details__photos--col a:last-child img {
   transform: scaleX(-1);
@@ -218,6 +220,7 @@
   transform: none;
   -o-object-position: center center;
      object-position: center center;
+  transition: transform 0.3s ease;
 }
 .details__photos--reverse a:hover img {
   transform: scale(1.05);
