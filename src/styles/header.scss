@@ -217,7 +217,7 @@
   }
 
   &__phone {
-    display: none;
+    display: block;
     font-size: 13px;
     color: #ccc;
     text-decoration: none;
@@ -227,7 +227,7 @@
       color: $white;
     }
 
-    @media (max-width: $ipad) {
+    @media (max-width: $tablet) {
       display: none;
     }
   }
@@ -271,6 +271,10 @@
       }
 
       .header__phone-tooltip {
+        @media (max-width: $tablet) {
+          display: none;
+        }
+
         position: absolute;
         top: calc(100% + 10px);
         right: 0;

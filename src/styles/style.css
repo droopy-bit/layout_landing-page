@@ -314,7 +314,7 @@ body.no-scroll {
   gap: 24px;
 }
 .header__phone {
-  display: none;
+  display: block;
   font-size: 13px;
   color: #ccc;
   text-decoration: none;
@@ -323,7 +323,7 @@ body.no-scroll {
 .header__phone:hover {
   color: #fff;
 }
-@media (max-width: 744px) {
+@media (max-width: 1024px) {
   .header__phone {
     display: none;
   }
@@ -360,6 +360,11 @@ body.no-scroll {
 .header__icon-btn.header__phone-btn:hover .header__icon-img {
   transform: rotate(-15deg) scale(1.15);
   opacity: 0.75;
+}
+@media (max-width: 1024px) {
+  .header__icon-btn.header__phone-btn .header__phone-tooltip {
+    display: none;
+  }
 }
 .header__icon-btn.header__phone-btn .header__phone-tooltip {
   position: absolute;
@@ -428,19 +433,6 @@ body.no-scroll {
   overflow: hidden;
   background: #111;
 }
-.hero a {
-  display: block;
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 2;
-}
-.hero a:hover .hero__bike {
-  transform: scale(1.04);
-}
-.hero {
-  /* stylelint-disable-next-line no-descending-specificity */
-}
 .hero__bike {
   position: absolute;
   inset: 0;
@@ -450,7 +442,7 @@ body.no-scroll {
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
-  transition: transform 0.3s ease;
+  pointer-events: none;
 }
 @media (max-width: 480px) {
   .hero__bike {
@@ -747,16 +739,16 @@ body.no-scroll {
 }
 
 .contact {
-  padding: 100px 0 0;
+  padding: 60px 0 0;
 }
 @media (max-width: 1024px) {
   .contact {
-    padding-top: 72px;
+    padding-top: 48px;
   }
 }
 @media (max-width: 480px) {
   .contact {
-    padding-top: 52px;
+    padding-top: 32px;
   }
 }
 .contact .container {

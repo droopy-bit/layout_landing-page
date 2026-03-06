@@ -1,14 +1,14 @@
 @import 'variables';
 
 .contact {
-  padding: 100px 0 0;
+  padding: 60px 0 0;
 
   @media (max-width: $tablet) {
-    padding-top: 72px;
+    padding-top: 48px;
   }
 
   @media (max-width: $mobile) {
-    padding-top: 52px;
+    padding-top: 32px;
   }
 
   .container {

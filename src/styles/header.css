@@ -215,7 +215,7 @@
   gap: 24px;
 }
 .header__phone {
-  display: none;
+  display: block;
   font-size: 13px;
   color: #ccc;
   text-decoration: none;
@@ -224,7 +224,7 @@
 .header__phone:hover {
   color: #fff;
 }
-@media (max-width: 744px) {
+@media (max-width: 1024px) {
   .header__phone {
     display: none;
   }
@@ -261,6 +261,11 @@
 .header__icon-btn.header__phone-btn:hover .header__icon-img {
   transform: rotate(-15deg) scale(1.15);
   opacity: 0.75;
+}
+@media (max-width: 1024px) {
+  .header__icon-btn.header__phone-btn .header__phone-tooltip {
+    display: none;
+  }
 }
 .header__icon-btn.header__phone-btn .header__phone-tooltip {
   position: absolute;

@@ -7,19 +7,6 @@
   overflow: hidden;
   background: #111;
 
-  a {
-    display: block;
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 2;
-
-    &:hover .hero__bike {
-      transform: scale(1.04);
-    }
-  }
-
-  /* stylelint-disable-next-line no-descending-specificity */
   &__bike {
     position: absolute;
     inset: 0;
@@ -27,7 +14,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    transition: transform 0.3s ease;
+    pointer-events: none;
 
     @media (max-width: 480px) {
       object-position: 80% 30%;

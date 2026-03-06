@@ -1,14 +1,14 @@
 .contact {
-  padding: 100px 0 0;
+  padding: 60px 0 0;
 }
 @media (max-width: 1024px) {
   .contact {
-    padding-top: 72px;
+    padding-top: 48px;
   }
 }
 @media (max-width: 480px) {
   .contact {
-    padding-top: 52px;
+    padding-top: 32px;
   }
 }
 .contact .container {
